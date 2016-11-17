@@ -1,0 +1,34 @@
+{
+  "name": "inquirer-recursive",
+  "description": "Recursive prompt for inquirer.js",
+  "version": "0.0.1",
+  "devDependencies": {
+    "inquirer": "^1.1.2",
+    "lodash": "^3.10.1",
+    "util": "^0.10.3"
+  },
+  "keywords": [
+    "command",
+    "prompt",
+    "recursive",
+    "cli",
+    "generator"
+  ],
+  "repository": "SBoudrias/Inquirer.js",
+  "eslintConfig": {
+    "extends": "xo-space",
+    "rules": {
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-unused-expressions": "off",
+      "handle-callback-err": "off",
+      "no-eq-null": "off",
+      "eqeqeq": [
+        "error",
+        "allow-null"
+      ]
+    }
+  }
+}
