@@ -33,10 +33,11 @@ Change `recursive` to whatever you might prefer.
 ```javascript
 inquirer.registerPrompt('recursive', require('inquirer-recursive'));
 inquirer.prompt([{
-  type: 'recursive',
-  message: 'Add a new user ?',
-  prompts: [
-    {
+    type: 'recursive',
+    message: 'Add a new user ?',
+    name: 'users',
+    prompts: [
+        {
 			type: 'input',
 			name: 'name',
 			message: 'What is your name?',
@@ -45,18 +46,31 @@ inquirer.prompt([{
 				return 'name is required';
 			}
 		}, {
-      type: 'input',
-      name: 'age',
-      message: 'How old are you?',
-      validate: function (value) {
-        var digitsOnly = /\d+/;
-        if (digitsOnly.test(value)) { return true; }
-        return 'Invalid age! Must be a number genius!';
-      }
-    }
-  ]
+            type: 'input',
+            name: 'age',
+            message: 'How old are you?',
+            validate: function (value) {
+                var digitsOnly = /\d+/;
+                if (digitsOnly.test(value)) { return true; }
+                return 'Invalid age! Must be a number genius!';
+            }
+        }
+    ]
 }], function(answers) {
-  //etc
+    console.log(answers.users);
+    /*
+    OUTPUT :
+    [
+        {
+            name: 'Brendan Eich',
+            age: '42',
+        }, {
+            name: 'Jordan Walke',
+            age: '13',
+        },
+        ...
+    ]
+    */
 });
 ```
 
