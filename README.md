@@ -2,6 +2,9 @@
 
 recursive prompt for [inquirer](https://github.com/SBoudrias/Inquirer.js)
 
+![](http://i.giphy.com/l2JhntGGk3QjTUIiA.gif)
+
+
 ## Installation
 
 ```
@@ -40,7 +43,7 @@ inquirer.prompt([{
         {
 			type: 'input',
 			name: 'name',
-			message: 'What is your name?',
+			message: 'What is user\'s name?',
 			validate: function (value) {
 				if ((/.+/).test(value)) { return true; }
 				return 'name is required';
@@ -48,7 +51,7 @@ inquirer.prompt([{
 		}, {
             type: 'input',
             name: 'age',
-            message: 'How old are you?',
+            message: 'How old is he?',
             validate: function (value) {
                 var digitsOnly = /\d+/;
                 if (digitsOnly.test(value)) { return true; }
@@ -56,7 +59,7 @@ inquirer.prompt([{
             }
         }
     ]
-}], function(answers) {
+}]).then(function(answers) {
     console.log(answers.users);
     /*
     OUTPUT :

@@ -19,22 +19,22 @@ function Prompt(question, rl, answers) {
 util.inherits( Prompt, Base );
 
 Prompt.prototype.askForLoop = function() {
-  var ui = this.inquirer.prompt({
+    var ui = inquirer.prompt({
         default: true,
         type:'confirm',
         name: 'loop',
         message: this.opt.message || 'Would you like to loop ?'
-  }).then(function (result) {
+    }).then(function (result) {
         if(result.loop) {
             this.askNestedQuestion();
         } else {
             this.done( this.responses );
         }
-   }.bind(this));
+    }.bind(this));
 }
 
 Prompt.prototype.askNestedQuestion = function() {
-    this.inquirer.prompt(this.opt.prompts).then(function (result) {
+    inquirer.prompt(this.opt.prompts).then(function (result) {
         this.responses.push(result);
         this.askForLoop();
     }.bind(this));
