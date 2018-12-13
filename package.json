@@ -4,8 +4,7 @@
   "version": "0.0.5",
   "dependencies": {
     "inquirer": "^1.1.2",
-    "lodash": "^3.10.1",
-    "util": "^0.10.3"
+    "lodash": "^4.17.11"
   },
   "keywords": [
     "command",
