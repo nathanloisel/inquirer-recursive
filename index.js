@@ -19,11 +19,12 @@ function Prompt(question, rl, answers) {
 util.inherits( Prompt, Base );
 
 Prompt.prototype.askForLoop = function() {
+    var message = typeof this.opt.message === 'function' ? this.opt.message() : this.opt.message;
     var ui = inquirer.prompt({
         default: true,
         type:'confirm',
         name: 'loop',
-        message: this.opt.message || 'Would you like to loop ?'
+        message: message || 'Would you like to loop ?'
     }).then(function (result) {
         if(result.loop) {
             this.askNestedQuestion();
