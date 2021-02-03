@@ -23,7 +23,7 @@ Prompt.prototype.askForLoop = function() {
         default: true,
         type:'confirm',
         name: 'loop',
-        message: this.opt.message || 'Would you like to loop ?'
+        message: (typeof this.opt.message === 'function' ? this.opt.message() : this.opt.message) || 'Would you like to loop ?'
     }).then(function (result) {
         if(result.loop) {
             this.askNestedQuestion();
