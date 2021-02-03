@@ -1,7 +1,7 @@
 {
   "name": "inquirer-recursive",
   "description": "Recursive prompt for inquirer.js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "dependencies": {
     "inquirer": "^7.3.3",
     "lodash": "^4.17.20"
